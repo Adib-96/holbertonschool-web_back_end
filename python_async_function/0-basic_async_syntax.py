@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import random
 import asyncio
 """
@@ -13,5 +15,6 @@ a random value between 0 and max_delay (inclusive).
 
 
 async def wait_random(max_delay=10):
+    """function handle coroutine"""
     await asyncio.sleep(max_delay)
     return random.uniform(0, max_delay)
