@@ -17,6 +17,3 @@ def element_length(lst: List[str]) -> List[Tuple[str, int]]:
         A list of tuples.
     """
     return [(i, len(i)) for i in lst]
-
-
-print(element_length(["af", "bqq", "cqsd"]))
