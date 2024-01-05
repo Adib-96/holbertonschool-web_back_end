@@ -13,7 +13,7 @@ Use the random module.
 '''
 
 
-import random
+from random import uniform
 import asyncio
 
 
@@ -21,4 +21,4 @@ async def async_generator():
     '''Function that generate a list of random numbers'''
     for i in range(10):
         await asyncio.sleep(1)
-        yield random.random()
+        yield uniform(0, 10)
