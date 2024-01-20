@@ -15,7 +15,11 @@ export default class Pricing {
   }
 
   get currency() {
-    return this._currency;
+    const { _name } = this._currency;
+    if (_name[_name.length - 1] === 's') {
+      this._currency._name = Array.from(this._currency._name).slice(0, _name.length - 1).join('').toLowerCase();
+    }
+    return this._currency._name;
   }
 
   set currency(value) {
@@ -23,7 +27,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    const { code, name } = new Currency(this._currency._code, this._currency._name);
+    const { code, name } = new Currency(this._currency._name, this._currency._code);
     return `${this.amount} ${code} (${name})`;
   }
 
