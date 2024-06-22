@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-'''
-python module that use Regex pattern
-'''
+"""
+0. Regex-ing: filter_datum
+"""
 import re
 
 
 def filter_datum(fields, redaction, message, separator):
-    ''' Description: Regex-ing - Write a function called filter_datum that
+    """ Description: Regex-ing - Write a function called filter_datum that
                      returns the log message obfuscated:
 
         Arguments:
@@ -20,7 +20,7 @@ def filter_datum(fields, redaction, message, separator):
         field values.
         filter_datum should be less than 5 lines long and use re.sub to
         perform the substitution with a single regex.
-    '''
+    """
 
     for i in fields:
         message = re.sub(i + "=.*?" + separator,
