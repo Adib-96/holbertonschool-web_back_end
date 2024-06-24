@@ -25,7 +25,7 @@ def not_found(error) -> tuple:
 def unauthorized(error) -> tuple:
     """ unauthorized handler
     """
-    return jsonify({"error": "Unauthorized"}),401
+    return jsonify({"error": "Unauthorized"}), 401
 
 
 if __name__ == "__main__":
