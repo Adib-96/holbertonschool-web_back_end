@@ -24,16 +24,13 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-                Public method to get the authorization header from the request.
-
-                Args:
-                    request (Flask request object, optional):
-                    The request object. Defaults to None.
-
-                Returns:
-                    str: None for now, as the logic will be implemented later.
-                """
-        return None
+        Public method to get the authorization header from the request.
+        """
+        if request is None:
+            return None
+        if 'Authorization' not in request.headers:
+            return None
+        return request.headers['Authorization']
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
