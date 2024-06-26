@@ -4,7 +4,7 @@
 from api.v1.auth.auth import Auth
 
 
-class BasicAuth:
+class BasicAuth(Auth):
     """ Basic Authentication Class """
 
     def extract_base64_authorization_header(
