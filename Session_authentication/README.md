@@ -1,1 +1,1 @@
-# Basic authentication
+# Session authentication
