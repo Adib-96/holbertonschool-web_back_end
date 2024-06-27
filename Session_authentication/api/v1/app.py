@@ -17,34 +17,27 @@ auth = None
 if os.getenv("AUTH_TYPE") == "auth":
     from api.v1.auth.auth import Auth
     auth = Auth()
+if os.getenv("Auth_TYPE") == "session_auth":
+    from api.v1.auth.session_auth import SessionAuth
+    auth = SessionAuth()
 
 
 @app.before_request
-def before_request() -> str:
-    """ Before Request Handler
-    Requests Validation
+def before_request():
+    """execute before each request
     """
-    if auth is None:
-        return
-
-    excluded_paths = ['/api/v1/status/',
-                      '/api/v1/unauthorized/',
-                      '/api/v1/forbidden/',
-                      '/api/v1/auth_session/login/']
-
-    if not auth.require_auth(request.path, excluded_paths):
-        return
-
-    if auth.authorization_header(request) is None \
-            and auth.session_cookie(request) is None:
-        abort(401)
-
-    # if auth.current_user(request) is None:
-    current_user = auth.current_user(request)
-    if current_user is None:
-        abort(403)
-
-    request.current_user = current_user
+    if auth is not None:
+        excluded = ['/api/v1/status/',
+                    '/api/v1/unauthorized/',
+                    '/api/v1/forbidden/',
+                    '/api/v1/auth_session/login/']
+        if auth.require_auth(request.path, excluded):
+            if (auth.authorization_header(request) is None and
+                    auth.session_cookie(request) is None):
+                abort(401)
+            if auth.current_user(request) is None:
+                abort(403)
+            request.current_user = auth.current_user(request)
 
 
 @app.errorhandler(401)
