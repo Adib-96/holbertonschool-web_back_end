@@ -3,10 +3,12 @@
 """
 from flask import request
 from typing import List, TypeVar
+import os
 
 
 class Auth:
     """ Class to manage the API authentication """
+
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
         Public method to determine if a given path requires authentication.
@@ -45,3 +47,9 @@ class Auth:
                    as the logic will be implemented later.
                """
         return None
+
+    def session_cookie(self, request=None):
+        if not request:
+            return None
+        session_name = os.getenv("SESSION_NAME")
+        return request.cookies.get(session_name)
