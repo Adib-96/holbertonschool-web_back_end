@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
-
+from typing import TypeVar
 
 from user import Base, User
 
@@ -33,7 +33,7 @@ class DB:
             self.__session = DBSession()
         return self.__session
 
-    def add_user(self, email, hashed_password) -> User:
+    def add_user(self, email: str, hashed_password: str) -> User:
         """summary : add user to db
         """
         new_user = User(email=email, hashed_password=hashed_password)
@@ -42,7 +42,7 @@ class DB:
         seesion.commit()
         return new_user
 
-    def find_user_by(self, **kwargs):
+    def find_user_by(self, **kwargs) -> User:
         """ Finds user by key word args
         Return: First row found in the users table as filtered by kwargs
         """
