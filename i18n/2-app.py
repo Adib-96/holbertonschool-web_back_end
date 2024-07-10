@@ -5,6 +5,7 @@ from flask import Flask, render_template, request
 from flask_babel import Babel
 
 app = Flask(__name__)
+babel = Babel(app)
 
 
 class Config:
@@ -15,17 +16,17 @@ class Config:
 
 
 app.config.from_object(Config)
-babel = Babel(app)
 
 
 def get_locale():
+    ''' return best languages '''
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route("/")
 def hello_world():
-    local = get_locale()
     ''' return the template '''
+    local = get_locale()
     return render_template('2-index.html', local=local)
 
 
