@@ -56,7 +56,7 @@ Throughout the development of these projects, I encountered numerous challenges 
 
 ## 🧑‍💻 About the Developer
 
-Hello! I'm Adib ben Haddada, a passionate web developer specializing in backend technologies. I am committed to creating efficient and scalable web applications. Connect with me on [LinkedIn](www.linkedin.com/in/adib-ben-haddada-194ba2296), follow me on [Twitter](https://x.com/Adib__Bh), and explore more of my work on my [Portfolio](https://github.com/your-portfolio-repo).
+Hello! I'm Adib ben Haddada, a passionate web developer specializing in backend technologies. I am committed to creating efficient and scalable web applications. Connect with me on [LinkedIn](https://www.linkedin.com/in/adib-ben-haddada-194ba2296/), follow me on [Twitter](https://x.com/Adib__Bh), and explore more of my work on my [Portfolio](https://github.com/your-portfolio-repo).
 
 ## Contact
 
