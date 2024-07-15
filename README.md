@@ -60,9 +60,9 @@ Hello! I'm Adib ben Haddada, a passionate web developer specializing in backend 
 
 ## Contact
 
-- **Email:** [adibbh1996@gmail.com](adibbh1996@gmail.com)
-- **GitHub:** [github.com/your-username](https://github.com/your-username)
-- **Twitter:** [@your-twitter-alias](https://twitter.com/your-twitter-alias)
-- **LinkedIn:** [linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/your-linkedin-profile)
+- **Email:** [adibbh1996@gmail.com](mailto:adibbh1996@gmail.com)
+- **GitHub:** [Adib-96](https://github.com/Adib-96)
+- **Twitter:** [@Adib__Bh](https://x.com/Adib__Bh)
+- **LinkedIn:** [adib ben haddada](https://www.linkedin.com/in/adib-ben-haddada-194ba2296/)
 - **Website:** [your-website.com](https://your-website.com)
 
