@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "mocha": "^10.6.0"
-  }
+    "mocha": "^10.6.0",
+    "chai":"*"
+  },
+  "type": "module"
 }
