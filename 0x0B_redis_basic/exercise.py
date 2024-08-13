@@ -4,7 +4,7 @@ Python module to communicate with Redis server
 '''
 import redis
 import uuid
-from typing import Union
+from typing import Union, Optional, Callable, Any
 
 
 class Cache:
@@ -25,3 +25,19 @@ class Cache:
 
         return key
 
+    def get(self, key, fn: Optional[Callable[[bytes], Any]]) -> Any:
+        """Retrieves a value from Redis"""
+        value = self._redis.get(key)
+        if value is None:
+            return None
+        if fn is not None:
+            return fn(value)
+        return value
+
+    def get_str(self, key: str) -> str:
+        """Retrieves a value from Redis and converts it to a string."""
+        return self.get(key, fn=lambda d: d.decode("utf-8"))
+
+    def get_int(self, key: str) -> int:
+        """Retrieves a value from Redis and converts it to an integer."""
+        return self.get(key, fn=int)
