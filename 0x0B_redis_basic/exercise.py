@@ -5,6 +5,18 @@ Python module to communicate with Redis server
 import redis
 import uuid
 from typing import Union, Optional, Callable, Any
+from functools import wraps
+
+
+def count_calls(method: Callable) -> Callable:
+    '''count calls function'''
+    @wraps(method)
+    def wrapper(self, *args, **kwargs):
+        '''wrapper function'''
+        key = method.__qualname__
+        self._redis.incr(key)
+        return method(self, *args, **kwargs)
+    return wrapper
 
 
 class Cache:
@@ -15,6 +27,7 @@ class Cache:
         self._redis = redis.Redis(host='localhost', port=6379, db=0)
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         '''
         Generate a random key
