@@ -1,7 +1,7 @@
-MySQL is a very popular open-source relational database management system (RDBMS).
-What is MySQL?
+### MySQL is a very popular open-source relational database management system (RDBMS).
+ What is MySQL?
 
-    MySQL is a relational database management system
+- MySQL is a relational database management system
     MySQL is open-source
     MySQL is free
     MySQL is ideal for both small and large applications
@@ -12,17 +12,17 @@ What is MySQL?
     MySQL is developed, distributed, and supported by Oracle Corporation
     MySQL is named after co-founder Monty Widenius's daughter: My
 
-Who Uses MySQL?
+## Who Uses MySQL?
 
-    Huge websites like Facebook, Twitter, Airbnb, Booking.com, Uber, GitHub, YouTube, etc.
+- Huge websites like Facebook, Twitter, Airbnb, Booking.com, Uber, GitHub, YouTube, etc.
     Content Management Systems like WordPress, Drupal, Joomla!, Contao, etc.
     A very large number of web developers around the world
 
-Show Data On Your Web Site
+## Show Data On Your Web Site
 
 To build a web site that shows data from a database, you will need:
 
-    An RDBMS database program (like MySQL)
+- An RDBMS database program (like MySQL)
     A server-side scripting language, like PHP
     To use SQL to get the data you want
     To use HTML / CSS to style the page
